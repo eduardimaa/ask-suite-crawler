@@ -30,10 +30,10 @@ const scraping = async (checkIn, checkOut) => {
 
     let result = await page.evaluate(() => {
         const selectorRowsTable = '#show_3 > table > tbody > tr.roomName'
-        let result = []
+        
         let rows = document.querySelectorAll(selectorRowsTable)
 
-        if (!rows) return result
+        if (!rows) return []
 
         rows = Array.from(document.querySelectorAll(selectorRowsTable))
 
